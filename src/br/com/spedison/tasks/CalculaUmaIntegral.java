@@ -1,6 +1,5 @@
 package br.com.spedison.tasks;
 
-import java.util.Date;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
@@ -43,10 +42,12 @@ public class CalculaUmaIntegral implements Runnable {
                             // Calculando com Retângulos
                             //double pontoMedio = (2. * posAtual[0] + passo) / 2.0;
                             //acc[0] += funcao.apply(pontoMedio) * passo;
+                            //posAtual[0] += passo;
+
                             // Calculando com trapézios
-                            posAtual[0] += passo;
-                            var in = inicio + (i * passo);
+                            var in = posAtual[0];
                             var fi = in + passo;
+                            posAtual[0] = fi;
                             acc[0] += (passo * (funcao.apply(in) + funcao.apply(fi))) / 2.0;
                         });
                         resultados.add(acc[0]);
