@@ -42,10 +42,10 @@ public class MainIntegral2Grau {
         }, 5);
         var tempoFinal = System.currentTimeMillis();
         System.out.println(new Date() + " - Processamento terminado.");
-        System.out.println("O Resultado da integral de %f a %f foi %f e demorou %f segundos".formatted(
+        System.out.println("O Resultado da integral de %f a %f foi %f e demorou %f segundos com %d Threads".formatted(
                 inicio, fim,
                 gi.getResultadoFinal(),
-                (double) (tempoFinal - tempoInicio) / 1000.)
-        );
+                (double) (tempoFinal - tempoInicio) / 1000.,
+                N_THREADS));
     }
 }
