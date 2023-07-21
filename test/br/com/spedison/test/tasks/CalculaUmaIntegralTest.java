@@ -19,7 +19,7 @@ class CalculaUmaIntegralTest {
                 "teste",
                 0,
                 1,
-                0.001,
+                100,
                 (x)->x*x,
                 results,
                 new AtomicInteger(0));
